@@ -5,18 +5,24 @@ on:
     - cron: "* * * * *"
   workflow_dispatch:
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   run:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - name: Python setup
+      - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.10"
+          python-version: "3.11"
 
-      - run: pip install requests beautifulsoup4
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4
 
-      - run: python main.py
+      - name: Run script
+        run: python main.py
