@@ -5,7 +5,7 @@ import hashlib
 import os
 
 URL = "http://anzn.net/sp/?p=26100F&pt=sp"
-KEYWORD = "右京区"
+KEYWORD = "京都市"
 
 def get_info():
     res = requests.get(URL)
