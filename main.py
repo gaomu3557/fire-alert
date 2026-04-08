@@ -42,7 +42,7 @@ def main():
         old = ""
 
     if hash_now != old:
-        send_line("🚒【右京区の新着情報】\n\n" + message)
+        send_line("🚒【京都市の災害情報】\n\n" + message)
         with open("last.txt", "w") as f:
             f.write(hash_now)
 
